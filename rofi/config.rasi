@@ -6,6 +6,7 @@ configuration{
     icon-theme: "Oranchelo";
     terminal: "st";
     drun-display-format: "{icon} {name}";
+    window-format: " {c} ( {w} )";
     location: 0;
     disable-history: false;
     hide-scrollbar: true;
