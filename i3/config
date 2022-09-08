@@ -12,15 +12,22 @@
 # Screenshot
 bindsym Print exec scrot $HOME/Pictures/Screenshots/`date +%Y-%m-%d_%H:%M:%S`.png
 
+# Picom
+exec --no-startup-id picom -b
+
 # Remove title bar
 default_border pixel 1
 default_floating_border pixel 1
 
 # Gaps
-gaps inner 10
-gaps outer -4
+gaps inner 8
+gaps outer 0
 
-smart_gaps on
+for_window [class=".*"] border pixel 0
+
+smart_borders on
+
+hide_edge_borders smart_no_gaps
 
 # Press $mod+Shift+g to enter the gap mode. Choose o or i for modifying outer/inner gaps. Press one of + / - (in-/decrement for current workspace) or 0 (remove gaps for current workspace). If you also press Shift with these keys, the change will be global for all workspaces.
 set $mode_gaps Gaps: (o) outer, (i) inner
@@ -89,7 +96,6 @@ exec --no-startup-id xss-lock --transfer-sleep-lock -- i3lock --nofork
 # NetworkManager is the most popular way to manage wireless networks on Linux,
 # and nm-applet is a desktop environment-independent system tray GUI for it.
 exec --no-startup-id nm-applet
-
 # Use pactl to adjust volume in PulseAudio.
 set $refresh_i3status killall -SIGUSR1 i3status
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +10% && $refresh_i3status
