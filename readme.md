@@ -4,7 +4,7 @@
 
 # Thebigbot Rice
 
-This repository contains all my dotfiles.
-This rice is based on [gigantino/rice](https://github.com/gigantino/rice)
+This repository contains all my dotfiles. I use it to configure my system and keep track of the changes I make. 
+The theme used is [catppuccin](https://catppuccin.com/).
 
 </div>

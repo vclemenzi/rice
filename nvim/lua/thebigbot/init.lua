@@ -1,8 +1,0 @@
-require("thebigbot.set")
-require("thebigbot.packer")
-require("thebigbot.theme")
-require("thebigbot.lualine")
-require("thebigbot.tree")
-require("thebigbot.telescope")
-require("thebigbot.treesitter")
-require("thebigbot.cmp")
