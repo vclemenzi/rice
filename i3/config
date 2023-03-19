@@ -127,6 +127,9 @@ bindsym $mod+space focus mode_toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
+# lock
+bindsym $mod+x exec betterlockscreen -l blur
+
 # focus the child container
 #bindsym $mod+d focus child
 
