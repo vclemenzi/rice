@@ -2,6 +2,3 @@
 
 # Arch packages
 picom feh i3 i3-gaps polybar rofi alacritty
-
-# Aur packages
-betterlockscreen-git (you need to remove the original i3lock package)
