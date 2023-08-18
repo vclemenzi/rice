@@ -1,8 +1,0 @@
-@theme "catppuccin"
-
-configuration {
-    modi: "drun";
-    drun-display-format: "{icon} {name}";
-    icon-theme: "Oranchelo";
-    show-icons: true;
-}
