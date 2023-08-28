@@ -69,6 +69,9 @@ bindsym $mod+Return exec alacritty
 # kill focused window
 bindsym $mod+Shift+q kill
 
+# lock
+bindsym $mod+Shift+s exec i3lock -i $HOME/.config/i3/bg.png
+
 # start dmenu (a program launcher)
 bindsym $mod+d exec --no-startup-id dmenu_run
 
