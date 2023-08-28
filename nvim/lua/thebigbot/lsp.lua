@@ -9,7 +9,8 @@ local lsp_servers = {
   "astro",
   "svelte",
   "eslint",
-  "emmet_ls"
+  "emmet_ls",
+  "clangd",
 }
 
 require("mason").setup()
