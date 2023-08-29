@@ -1,5 +1,6 @@
 # Aliases
 alias pac="sudo pacman"
+alias screenshot="flameshot gui"
 
 ## One word aliases
 alias s="sudo"
