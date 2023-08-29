@@ -17,5 +17,5 @@ alias ttct="cd $HOME/.config/tmux"
 set fish_greeting
 
 function fish_prompt -d "Write out the prompt"
-    printf '%s%s%s%s%s %s%s \n%s ' "["(set_color blue)$USER(set_color normal)(set_color red)"@"(set_color normal)(set_color cyan)$hostname(set_color normal)"]" (set_color yellow) " ➜" (set_color normal) (set_color green) (prompt_pwd) (set_color normal) (set_color red)"\$"(set_color normal) 
+    printf '%s%s%s%s%s %s%s \n%s ' "["(set_color blue)$USER(set_color normal)(set_color red)"@"(set_color normal)(set_color cyan)$hostname(set_color normal)"]" (set_color yellow) " ➜ " (set_color normal) (set_color green) (prompt_pwd) (set_color normal) (set_color red)"\$"(set_color normal) 
 end
