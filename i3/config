@@ -13,8 +13,8 @@
 exec_always --no-startup-id picom -b
 
 # Gaps
-gaps inner 9
-gaps outer 9
+gaps inner 18
+gaps outer 18
 
 set $mod Mod4
 
