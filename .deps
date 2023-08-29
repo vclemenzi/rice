@@ -1,4 +1,6 @@
-# i3-gaps will be inserted into i3 package. Probably you don't need to install i3-gaps separately in the future.
-
 # Arch packages
-picom feh i3 i3-gaps i3lock polybar rofi alacritty tmux neovim xclip
+## Required
+picom feh i3 fish neofetch i3lock polybar rofi alacritty tmux neovim xclip
+
+## Optional
+mpv
