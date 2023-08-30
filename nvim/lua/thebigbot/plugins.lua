@@ -80,9 +80,6 @@ require("lazy").setup({
     dependencies = { "nvim-lua/plenary.nvim" },
   },
   {
-    'potamides/pantran.nvim'
-  },
-  {
     'j-morano/buffer_manager.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' }
   },
