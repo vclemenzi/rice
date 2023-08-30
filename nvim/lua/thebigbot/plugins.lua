@@ -113,5 +113,17 @@ require("lazy").setup({
   },
   {
     'norcalli/nvim-colorizer.lua'
+  },
+  {
+    'jay-babu/mason-nvim-dap.nvim'
+  },
+  {
+    'mfussenegger/nvim-dap'
+  },
+  {
+    'rcarriga/nvim-dap-ui'
+  },
+  {
+    'leoluz/nvim-dap-go'
   }
 })
