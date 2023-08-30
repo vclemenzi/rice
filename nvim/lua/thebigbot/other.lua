@@ -42,3 +42,6 @@ vim.opt.cursorlineopt = "number"
 require('colorizer').setup()
 
 require("which-key").setup({})
+
+vim.o.timeout = true
+vim.o.timeoutlen = 500
