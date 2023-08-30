@@ -125,5 +125,8 @@ require("lazy").setup({
   },
   {
     'leoluz/nvim-dap-go'
+  },
+  {
+    'folke/which-key.nvim'
   }
 })

@@ -40,3 +40,5 @@ vim.opt.cursorline = true
 vim.opt.cursorlineopt = "number"
 
 require('colorizer').setup()
+
+require("which-key").setup({})
