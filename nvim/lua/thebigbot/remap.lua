@@ -1,4 +1,4 @@
-vim.api.nvim_set_keymap("n", "<leader>e", [[<cmd>lua require("oil").open<CR>]],
+vim.api.nvim_set_keymap("n", "<leader>e", [[<cmd>lua require("oil").open()<CR>]],
   { noremap = true, silent = true, desc = "Browse files" })
 
 -- Telescope: Find Files
