@@ -33,7 +33,7 @@ vim.api.nvim_set_keymap('n', '<leader>l', ':lua GoToLine()<CR>', { noremap = tru
 require("oil").setup({
   view_options = {
     show_hidden = true,
-  },
+  }
 })
 
 vim.opt.cursorline = true

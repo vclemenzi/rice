@@ -2,7 +2,7 @@
 vim.keymap.set("n", "<leader>e", require('oil').open, { desc = "Browse files" })
 
 -- Telescope: Find Recently Opened Files
-vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = "Find recently opened files" })
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').find_files, { desc = "Find files" })
 
 -- Buffer Manager: Toggle Quick Menu
 vim.keymap.set('n', '<leader><space>', require('buffer_manager.ui').toggle_quick_menu, { desc = "Find existing buffers" })
@@ -14,8 +14,13 @@ vim.keymap.set('n', '<leader>/', function()
   })
 end, { desc = "Fuzzily search in current buffer" })
 
--- Telescope: Find Files
-vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = "Open file search using Telescope" })
+
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').git_files, { desc = 'Search git files' })
+vim.keymap.set('n', '<leader>sf', require('telescope.builtin').find_files, { desc = 'Search files' })
+vim.keymap.set('n', '<leader>so', require('telescope.builtin').oldfiles, { desc = 'Search old files' })
+vim.keymap.set('n', '<leader>sh', require('telescope.builtin').help_tags, { desc = 'Search help' })
+vim.keymap.set('n', '<leader>sw', require('telescope.builtin').grep_string, { desc = 'Search current word' })
+vim.keymap.set('n', '<leader>sg', require('telescope.builtin').live_grep, { desc = 'Search by grep' })
 
 -- Telescope: View Vim Options
 vim.keymap.set('n', '<leader>o', require('telescope.builtin').vim_options,
