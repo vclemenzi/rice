@@ -1,52 +1,49 @@
-vim.api.nvim_set_keymap("n", "<leader>e", [[<cmd>lua require("oil").open()<CR>]],
-  { noremap = true, silent = true, desc = "Browse files" })
+-- Oil Plugin: Open Files
+vim.keymap.set("n", "<leader>e", require('oil').open, { desc = "Browse files" })
 
--- Telescope: Find Files
-vim.api.nvim_set_keymap('n', '<leader>f', [[<cmd>lua require('telescope.builtin').find_files()<CR>]],
-  { noremap = true, silent = true, desc = "Open file search using Telescope" })
-
--- Telescope: View Vim Options
-vim.api.nvim_set_keymap('n', '<leader>o', [[<cmd>lua require('telescope.builtin').vim_options()<CR>]],
-  { noremap = true, silent = true, desc = "Open Vim options selection using Telescope" })
+-- Telescope: Find Recently Opened Files
+vim.keymap.set('n', '<leader>?', require('telescope.builtin').oldfiles, { desc = "Find recently opened files" })
 
 -- Buffer Manager: Toggle Quick Menu
-vim.api.nvim_set_keymap('n', '<leader>b', [[<cmd>lua require("buffer_manager.ui").toggle_quick_menu()<CR>]],
-  { noremap = true, silent = true, desc = "Toggle quick buffer management menu" })
+vim.keymap.set('n', '<leader><space>', require('buffer_manager.ui').toggle_quick_menu, { desc = "Find existing buffers" })
+
+vim.keymap.set('n', '<leader>/', function()
+  require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
+    winblend = 10,
+    previewer = false,
+  })
+end, { desc = "Fuzzily search in current buffer" })
+
+-- Telescope: Find Files
+vim.keymap.set('n', '<leader>f', require('telescope.builtin').find_files, { desc = "Open file search using Telescope" })
+
+-- Telescope: View Vim Options
+vim.keymap.set('n', '<leader>o', require('telescope.builtin').vim_options,
+  { desc = "Open Vim options selection using Telescope" })
 
 -- Trouble Plugin: Toggle
-vim.api.nvim_set_keymap('n', '<leader>xx', [[<cmd>TroubleToggle<CR>]],
-  { noremap = true, silent = true, desc = "Toggle Trouble panel to view errors and warnings" })
+vim.keymap.set('n', '<leader>xx', ":TroubleToggle<CR>", { desc = "Toggle Trouble panel to view errors and warnings" })
 
 -- Tabs: Open New Tab
-vim.api.nvim_set_keymap('n', '<leader>tn', [[<cmd>tabnew<CR>]],
-  { noremap = true, silent = true, desc = "Open a new editing tab" })
+vim.keymap.set('n', '<leader>tn', ":tabnew<CR>", { desc = "Open a new editing tab" })
 
 -- Tmux Navigation
 vim.g.tmux_navigator_no_mappings = 1
 
-vim.api.nvim_set_keymap('n', '<silent> {Left-Mapping}', ':<C-U>TmuxNavigateLeft<cr>',
-  { noremap = true, desc = "Navigate left in Tmux" })
-vim.api.nvim_set_keymap('n', '<silent> {Down-Mapping}', ':<C-U>TmuxNavigateDown<cr>',
-  { noremap = true, desc = "Navigate down in Tmux." })
-vim.api.nvim_set_keymap('n', '<silent> {Up-Mapping}', ':<C-U>TmuxNavigateUp<cr>',
-  { noremap = true, desc = "Navigate up in Tmux" })
-vim.api.nvim_set_keymap('n', '<silent> {Right-Mapping}', ':<C-U>TmuxNavigateRight<cr>',
-  { noremap = true, desc = "Navigate right in Tmux" })
-vim.api.nvim_set_keymap('n', '<silent> {Previous-Mapping}', ':<C-U>TmuxNavigatePrevious<cr>',
-  { noremap = true, desc = "Navigate to previous location in Tmux" })
+vim.keymap.set('n', '{Left-Mapping}', ':<C-U>TmuxNavigateLeft<CR>', { desc = "Navigate left in Tmux" })
+vim.keymap.set('n', '{Down-Mapping}', ':<C-U>TmuxNavigateDown<CR>', { desc = "Navigate down in Tmux." })
+vim.keymap.set('n', '{Up-Mapping}', ':<C-U>TmuxNavigateUp<CR>', { desc = "Navigate up in Tmux" })
+vim.keymap.set('n', '{Right-Mapping}', ':<C-U>TmuxNavigateRight<CR>', { desc = "Navigate right in Tmux" })
+vim.keymap.set('n', '{Previous-Mapping}', ':<C-U>TmuxNavigatePrevious<CR>',
+  { desc = "Navigate to the previous location in Tmux" })
 
 -- DAP Debugging
-vim.api.nvim_set_keymap('n', '<leader>dp', [[<cmd> DapToggleBreakpoint <CR>]],
-  { noremap = true, silent = true, desc = "Toggle breakpoint using DAP" })
+vim.keymap.set('n', '<leader>dp', ":DapToggleBreakpoint<CR>", { desc = "Toggle breakpoint using DAP" })
 
-vim.api.nvim_set_keymap('n', '<leader>do',
-  [[<cmd>lua require('dap.ui.widgets').sidebar(require('dap.ui.widgets').scopes).open()<CR>]],
-  { silent = true, desc = "Open DAP sidebar for debugging scopes" })
+vim.keymap.set('n', '<leader>do', require('dap.ui.widgets').sidebar(require('dap.ui.widgets').scopes).open,
+  { desc = "Open DAP sidebar for debugging scopes" })
 
-vim.api.nvim_set_keymap('n', '<leader>dgt',
-  [[<cmd>lua require('dap-go').debug_test()<CR>]],
-  { silent = true, desc = "Start debugging Go tests using DAP" })
+vim.keymap.set('n', '<leader>dgt', require('dap-go').debug_test, { desc = "Start debugging Go tests using DAP" })
 
-vim.api.nvim_set_keymap('n', '<leader>dgl',
-  [[<cmd>lua require('dap-go').debug_last_test()<CR>]],
-  { silent = true, desc = "Debug the last Go test executed using DAP" })
+vim.keymap.set('n', '<leader>dgl', require('dap-go').debug_last_test,
+  { desc = "Debug the last Go test executed using DAP" })
