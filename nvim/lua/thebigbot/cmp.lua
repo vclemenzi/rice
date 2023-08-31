@@ -18,7 +18,8 @@ cmp.setup({
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'vsnip' },
-    { name = 'path' }
+    { name = 'path' },
+    { name = 'crates' }
   }, {
     { name = 'buffer' },
   }),
@@ -26,3 +27,13 @@ cmp.setup({
     format = lspkind.cmp_format(),
   },
 })
+
+
+local crates = require('crates')
+
+crates.setup({})
+cmp.setup.buffer({
+  sources = { { name = "crates" } }
+})
+
+crates.show()

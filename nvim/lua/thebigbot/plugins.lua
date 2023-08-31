@@ -128,5 +128,9 @@ require("lazy").setup({
   },
   {
     'folke/which-key.nvim'
+  },
+  {
+    'saecki/crates.nvim',
+    ft = { 'rust', 'toml' }
   }
 })

@@ -1,7 +1,7 @@
 require("mason-nvim-dap").setup()
 
 require("mason-nvim-dap").setup({
-  ensure_installed = { "delve" }
+  ensure_installed = { "delve", "lldb" }
 })
 
 local dap, dapui = require("dap"), require("dapui")
