@@ -3,15 +3,9 @@ require("autoclose").setup()
 vim.opt.termguicolors = true
 vim.wo.relativenumber = true
 
-vim.opt.tabstop = 2
-vim.opt.shiftwidth = 2
-vim.opt.expandtab = true
-
 vim.api.nvim_set_option("clipboard", "unnamedplus")
 
-require('Comment').setup({
-  filetypes = { "html", "xml", "jsx", "tsx" },
-})
+require('Comment').setup({})
 
 require('nvim-ts-autotag').setup()
 
@@ -45,3 +39,11 @@ require("which-key").setup({})
 
 vim.o.timeout    = true
 vim.o.timeoutlen = 500
+
+require('aerial').setup({
+  layout = {
+    max_width = { 40, 0.2 },
+    width = nil,
+    min_width = 25,
+  }
+})

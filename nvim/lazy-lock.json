@@ -1,5 +1,6 @@
 {
   "Comment.nvim": { "branch": "master", "commit": "176e85eeb63f1a5970d6b88f1725039d85ca0055" },
+  "aerial.nvim": { "branch": "master", "commit": "fc04a097d0b0e828dfd508f9b079774bd072431e" },
   "alpha-nvim": { "branch": "main", "commit": "e4fc5e29b731bdf55d204c5c6a11dc3be70f3b65" },
   "autoclose.nvim": { "branch": "main", "commit": "469782b0456f0b4f764378ffda94c18599544e09" },
   "buffer_manager.nvim": { "branch": "main", "commit": "efb68adfe259e47672c4d7d8e3fb703ec27adf7c" },

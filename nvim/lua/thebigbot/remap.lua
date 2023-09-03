@@ -28,6 +28,8 @@ vim.keymap.set('n', '<leader>o', require('telescope.builtin').vim_options,
 
 -- Trouble Plugin: Toggle
 vim.keymap.set('n', '<leader>xx', ":TroubleToggle<CR>", { desc = "Toggle Trouble panel to view errors and warnings" })
+vim.keymap.set('n', '<leader>xa', "<cmd>AerialToggle!<CR>",
+  { desc = "Toggle Aerial panel to view functions and declarations" })
 
 -- Tabs: Open New Tab
 vim.keymap.set('n', '<leader>tn', ":tabnew<CR>", { desc = "Open a new editing tab" })
