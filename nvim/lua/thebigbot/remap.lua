@@ -33,6 +33,7 @@ vim.keymap.set('n', '<leader>xa', "<cmd>AerialToggle!<CR>",
 
 -- Tabs: Open New Tab
 vim.keymap.set('n', '<leader>tn', ":tabnew<CR>", { desc = "Open a new editing tab" })
+vim.keymap.set('n', '<leader>tc', ":tabclose<CR>", { desc = "Close a tab" })
 
 -- Tmux Navigation
 vim.g.tmux_navigator_no_mappings = 1

@@ -1,14 +1,3 @@
-require("autoclose").setup()
-
-vim.opt.termguicolors = true
-vim.wo.relativenumber = true
-
-vim.api.nvim_set_option("clipboard", "unnamedplus")
-
-require('Comment').setup({})
-
-require('nvim-ts-autotag').setup()
-
 function GoToLine()
   local current_line = vim.fn.line('.')
   local lnum = vim.fn.input('Enter the line number: ')
@@ -24,21 +13,15 @@ end
 
 vim.api.nvim_set_keymap('n', '<leader>l', ':lua GoToLine()<CR>', { noremap = true })
 
+require('colorizer').setup()
+
+require("which-key").setup({})
+
 require("oil").setup({
   view_options = {
     show_hidden = true,
   }
 })
-
-vim.opt.cursorline = true
-vim.opt.cursorlineopt = "number"
-
-require('colorizer').setup()
-
-require("which-key").setup({})
-
-vim.o.timeout    = true
-vim.o.timeoutlen = 500
 
 require('aerial').setup({
   layout = {
@@ -47,3 +30,9 @@ require('aerial').setup({
     min_width = 25,
   }
 })
+
+require("autoclose").setup()
+
+require('Comment').setup({})
+
+require('nvim-ts-autotag').setup()
