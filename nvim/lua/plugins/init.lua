@@ -36,8 +36,8 @@ require("lazy").setup({
       m.setup_handlers {
         function(server)
           require('lspconfig')[server].setup({
-            on_attach = function()
-
+            on_attach = function(client)
+              require("lsp-format").on_attach(client)
             end
           })
         end
@@ -89,7 +89,7 @@ require("lazy").setup({
   {
     'nvim-lualine/lualine.nvim',
     dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = function ()
+    opts = function()
       return require("plugins.configs.lualine").setup
     end,
     config = function(_, o)
@@ -136,7 +136,7 @@ require("lazy").setup({
   },
   {
     'lewis6991/gitsigns.nvim',
-    config = function ()
+    config = function()
       require("gitsigns").setup()
 
       vim.cmd [[Gitsigns toggle_current_line_blame]]
@@ -148,8 +148,8 @@ require("lazy").setup({
     dependencies = { 'nvim-tree/nvim-web-devicons' },
     init = function()
       local status_ok, alpha = pcall(require, "alpha")
-        if not status_ok then
-          return
+      if not status_ok then
+        return
       end
 
       -- The config should only be called when the plugin has been loaded
@@ -170,9 +170,12 @@ require("lazy").setup({
     opts = function()
       return require("plugins.configs.oil").setup
     end,
-    init = function(_, o)
-      require("oil").setup(o)
+    init = function()
+      require("oil").setup()
     end,
+    config = function(_, o)
+      require("oil").setup(o)
+    end
   },
   {
     'folke/trouble.nvim',
@@ -209,31 +212,7 @@ require("lazy").setup({
     end,
   },
   {
-    "mfussenegger/nvim-lint",
-    opts = function()
-      return require("plugins.configs.lint")
-    end,
-    config = function(_, o)
-      require("lint").linters_by_ft = o.linters_by_ft
-
-      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        callback = function()
-          require("lint").try_lint()
-        end,
-      })
-    end,
+    'lukas-reineke/lsp-format.nvim',
   },
-  {
-    "mhartington/formatter.nvim",
-    config = function()
-      -- The config should only be called when the plugin has been loaded
-      require("formatter").setup(require("plugins.configs.formatter").setup)
 
-      vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-        callback = function()
-          require("lint").try_lint()
-        end,
-      })
-    end,
-  }
 })
