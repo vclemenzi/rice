@@ -1,4 +1,6 @@
-require("formatter").setup({
+local T = {}
+
+T["setup"] = {
   filetype = {
     javascript = {
       require("formatter.filetypes.javascript").prettier
@@ -10,8 +12,8 @@ require("formatter").setup({
       require("formatter.filetypes.any").remove_trailing_whitespace
     }
   }
-})
+}
 
-vim.api.nvim_create_autocmd({ "BufWritePost" }, {
-  command = "FormatWrite"
-})
+T["keys"] = {}
+
+return T

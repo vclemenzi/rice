@@ -1,7 +1,8 @@
 local cmp = require("cmp")
-local lspkind = require('lspkind')
 
-cmp.setup({
+local T = {}
+
+T["setup"] = {
   snippet = {
     expand = function(args)
       vim.fn["vsnip#anonymous"](args.body)
@@ -24,16 +25,10 @@ cmp.setup({
     { name = 'buffer' },
   }),
   formatting = {
-    format = lspkind.cmp_format(),
+    format = require("lspkind").cmp_format(),
   },
-})
+}
 
+T["keys"] = {}
 
-local crates = require('crates')
-
-crates.setup({})
-cmp.setup.buffer({
-  sources = { { name = "crates" } }
-})
-
-crates.show()
+return T

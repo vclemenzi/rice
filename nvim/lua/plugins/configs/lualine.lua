@@ -1,4 +1,6 @@
-require('lualine').setup {
+local T = {}
+
+T["setup"] = {
   options = {
     icons_enabled = true,
     theme = 'auto',
@@ -14,3 +16,7 @@ require('lualine').setup {
     lualine_z = { 'location' }
   },
 }
+
+T["keys"] = {}
+
+return T
