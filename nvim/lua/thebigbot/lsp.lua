@@ -13,8 +13,14 @@ local lsp_servers = {
   "clangd",
 }
 
-require("mason").setup()
+local msn = require("mason")
 local mlsp = require("mason-lspconfig")
+
+msn.setup({
+  ensure_installed = {
+    "prettier"
+  }
+})
 
 mlsp.setup({
   ensure_installed = lsp_servers

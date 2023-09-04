@@ -132,4 +132,10 @@ require("lazy").setup({
     "nvim-treesitter/nvim-treesitter",
     "nvim-tree/nvim-web-devicons"
   },
+  {
+    "mfussenegger/nvim-lint"
+  },
+  {
+    "mhartington/formatter.nvim"
+  }
 })

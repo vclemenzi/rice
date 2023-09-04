@@ -47,7 +47,7 @@ vim.keymap.set('n', '{Previous-Mapping}', ':<C-U>TmuxNavigatePrevious<CR>',
 
 -- DAP Debugging
 vim.keymap.set('n', '<leader>dp', ":DapToggleBreakpoint<CR>", { desc = "Toggle breakpoint using DAP" })
-
+vim.keymap.set('n', '<leader>dr', ":DapContinue<CR>", { desc = "Run or continue the debugger" })
 vim.keymap.set('n', '<leader>do', require('dap.ui.widgets').sidebar(require('dap.ui.widgets').scopes).open,
   { desc = "Open DAP sidebar for debugging scopes" })
 
