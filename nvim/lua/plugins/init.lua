@@ -167,15 +167,9 @@ require("lazy").setup({
     'stevearc/oil.nvim',
     dependencies = { "nvim-tree/nvim-web-devicons" },
     keys = require("plugins.configs.oil").keys,
-    opts = function()
-      return require("plugins.configs.oil").setup
-    end,
     init = function()
-      require("oil").setup()
+      require("oil").setup(require("plugins.configs.oil").setup)
     end,
-    config = function(_, o)
-      require("oil").setup(o)
-    end
   },
   {
     'folke/trouble.nvim',
@@ -214,5 +208,4 @@ require("lazy").setup({
   {
     'lukas-reineke/lsp-format.nvim',
   },
-
 })

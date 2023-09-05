@@ -7,7 +7,7 @@ T["setup"] = {
 }
 
 T["keys"] = {
-  { "<leader>e", "<cmd>Oil<cr>", desc = "Browse files" },
+  { "<leader>e", "<cmd>Oil<cr>", desc = "Browse files" }
 }
 
 return T
