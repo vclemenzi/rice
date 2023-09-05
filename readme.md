@@ -19,6 +19,6 @@ Sudo is not required will be prompted with the various steps, setup asks for con
 # Screenshots
 </div>
 
-![sexy](./icons/nvim1.png)
-![sexy](./icons/nvim2.png)
-![sexy](./icons/tmux.png)
+![sexy](./.icons/nvim1.png)
+![sexy](./.icons/nvim2.png)
+![sexy](./.icons/tmux.png)
