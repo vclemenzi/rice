@@ -36,7 +36,7 @@ require("lazy").setup({
       m.setup_handlers {
         function(server)
           require('lspconfig')[server].setup({
-            on_attach = function(client)
+            on_attach = function(client, bufnr)
               require("lsp-format").on_attach(client)
             end
           })
@@ -208,4 +208,24 @@ require("lazy").setup({
   {
     'lukas-reineke/lsp-format.nvim',
   },
+  {
+    "utilyre/barbecue.nvim",
+    dependencies = {
+      "SmiteshP/nvim-navic",
+      "nvim-tree/nvim-web-devicons",
+    },
+    config = function()
+      require("barbecue").setup()
+      require("barbecue.ui").update()
+    end,
+  },
+  {
+    'andweeb/presence.nvim',
+    opts = function()
+      return require("plugins.configs.presence").setup
+    end,
+    config = function(_, o)
+      require("presence").setup(o)
+    end,
+  }
 })
