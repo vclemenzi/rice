@@ -1,27 +1,27 @@
 local lazy = require("lazy")
 
-local config_dir = "lua/plugins/configs"
-
-local function getFilesInDirectory(dir)
-  local dir_contents = vim.fn.readdir(dir)
+local function getConfigFiles()
   local files = {}
+  local script_path = vim.fn.stdpath("config") ..
+      "/lua/plugins/configs"
+  local dir_contents = vim.fn.readdir(script_path)
   for _, item in ipairs(dir_contents) do
-    if vim.fn.isdirectory(dir .. "/" .. item) == 0 then
-      table.insert(files, item)
+    if item:match("%.lua$") then
+      local config_name = item:match("(.+)%.lua$")
+      table.insert(files, "plugins.configs." .. config_name)
     end
   end
+
   return files
 end
 
-local config_files = getFilesInDirectory(config_dir)
+local config_files = getConfigFiles()
 
 local lazy_configurations = {}
 
-for _, file in ipairs(config_files) do
-  if file:match("%.lua$") then
-    local config_name = file:match("(.+)%.lua$")
-    table.insert(lazy_configurations, require("plugins.configs." .. config_name))
-  end
+for _, config_name in ipairs(config_files) do
+  local config = require(config_name)
+  table.insert(lazy_configurations, config)
 end
 
 table.insert(lazy_configurations, 1, require("plugins.core"))
