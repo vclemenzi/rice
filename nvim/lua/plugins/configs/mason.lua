@@ -1,11 +1,11 @@
-local T = {}
-
-T["setup"] = {
-  ensure_installed = {
-    "prettier"
-  }
+return {
+  'williamboman/mason.nvim',
+  dependencies = { "williamboman/mason.nvim" },
+  init = function()
+    require("mason").setup({
+      ensure_installed = {
+        "prettier"
+      }
+    })
+  end,
 }
-
-T["keys"] = {}
-
-return T

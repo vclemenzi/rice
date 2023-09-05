@@ -1,231 +1,29 @@
-require("lazy").setup({
-  {
-    'nvim-telescope/telescope.nvim',
-    tag = '0.1.2',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = require("plugins.configs.telescope").keys,
-  },
-  {
-    "christoomey/vim-tmux-navigator",
-    lazy = false,
-    keys = require("plugins.configs.tmux").keys,
-  },
-  {
-    'neovim/nvim-lspconfig',
-  },
-  {
-    'williamboman/mason.nvim',
-    opts = function()
-      return require("plugins.configs.mason").setup
-    end,
-    init = function(_, o)
-      require("mason").setup(o)
-    end,
-  },
-  {
-    'williamboman/mason-lspconfig.nvim',
-    dependencies = { "neovim/nvim-lspconfig" },
-    opts = function()
-      return require("plugins.configs.mason-lsp").setup
-    end,
-    init = function(_, o)
-      local m = require("mason-lspconfig")
+local lazy = require("lazy")
 
-      m.setup(o)
+local config_dir = "lua/plugins/configs"
 
-      m.setup_handlers {
-        function(server)
-          require('lspconfig')[server].setup({
-            on_attach = function(client, bufnr)
-              require("lsp-format").on_attach(client)
-            end
-          })
-        end
-      }
-    end,
-  },
-  {
-    'hrsh7th/cmp-nvim-lsp'
-  },
-  {
-    'hrsh7th/cmp-buffer'
-  },
-  {
-    'hrsh7th/cmp-path'
-  },
-  {
-    'hrsh7th/cmp-cmdline'
-  },
-  {
-    'hrsh7th/nvim-cmp',
-    dependencies = { 'onsails/lspkind.nvim' },
-    init = function()
-      -- The config should only be called when the plugin has been loaded
-      require("cmp").setup(require("plugins.configs.cmp").setup)
-    end,
-  },
-  {
-    'hrsh7th/cmp-vsnip'
-  },
-  {
-    'hrsh7th/vim-vsnip'
-  },
-  {
-    'onsails/lspkind.nvim'
-  },
-  {
-    'MunifTanjim/prettier.nvim'
-  },
-  {
-    'nvim-treesitter/nvim-treesitter',
-    build = ':TSUpdate',
-    opts = function()
-      return require("plugins.configs.treesitter").setup
-    end,
-    config = function(_, o)
-      require("nvim-treesitter.configs").setup(o)
-    end,
-  },
-  {
-    'nvim-lualine/lualine.nvim',
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    opts = function()
-      return require("plugins.configs.lualine").setup
-    end,
-    config = function(_, o)
-      require("lualine").setup(o)
-    end,
-  },
-  {
-    'm4xshen/autoclose.nvim',
-    init = function()
-      require("autoclose").setup({})
-    end,
-  },
-  {
-    'windwp/nvim-ts-autotag',
-    init = function()
-      require("nvim-ts-autotag").setup({})
-    end,
-  },
-  {
-    'catppuccin/nvim',
-    name = "catppuccin",
-    priority = 1000,
-    init = function()
-      vim.cmd.colorscheme "catppuccin"
-    end,
-  },
-  {
-    'lukas-reineke/indent-blankline.nvim'
-  },
-  {
-    'ThePrimeagen/vim-be-good' -- Just for fun
-  },
-  {
-    'folke/todo-comments.nvim',
-    dependencies = { "nvim-lua/plenary.nvim" },
-  },
-  {
-    'j-morano/buffer_manager.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    keys = require("plugins.configs.bfm").keys,
-  },
-  {
-    'tpope/vim-fugitive'
-  },
-  {
-    'lewis6991/gitsigns.nvim',
-    config = function()
-      require("gitsigns").setup()
-
-      vim.cmd [[Gitsigns toggle_current_line_blame]]
+local function getFilesInDirectory(dir)
+  local dir_contents = vim.fn.readdir(dir)
+  local files = {}
+  for _, item in ipairs(dir_contents) do
+    if vim.fn.isdirectory(dir .. "/" .. item) == 0 then
+      table.insert(files, item)
     end
-  },
-  {
-    'goolord/alpha-nvim',
-    event = "VimEnter",
-    dependencies = { 'nvim-tree/nvim-web-devicons' },
-    init = function()
-      local status_ok, alpha = pcall(require, "alpha")
-      if not status_ok then
-        return
-      end
+  end
+  return files
+end
 
-      -- The config should only be called when the plugin has been loaded
-      alpha.setup(require("plugins.configs.alpha").setup)
-    end,
+local config_files = getFilesInDirectory(config_dir)
 
-  },
-  {
-    'numToStr/Comment.nvim',
-    config = function()
-      require("Comment").setup()
-    end,
-  },
-  {
-    'stevearc/oil.nvim',
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = require("plugins.configs.oil").keys,
-    init = function()
-      require("oil").setup(require("plugins.configs.oil").setup)
-    end,
-  },
-  {
-    'folke/trouble.nvim',
-    dependencies = { "nvim-tree/nvim-web-devicons" },
-    keys = require("plugins.configs.trouble").keys,
-  },
-  {
-    'folke/which-key.nvim',
-    config = function()
-      require("which-key").setup({})
-    end,
-  },
-  {
-    'saecki/crates.nvim',
-    ft = { 'rust', 'toml' },
-    lazy = true,
-    config = function()
-      local c = require("crates")
+local lazy_configurations = {}
 
-      c.setup({})
-      c.show()
-    end,
-  },
-  {
-    'stevearc/aerial.nvim',
-    dependencies = { "nvim-treesitter/nvim-treesitter", "nvim-tree/nvim-web-devicons" },
-    lazy = true,
-    keys = require("plugins.configs.aerial").keys,
-    opts = function()
-      return require("plugins.configs.aerial").setup
-    end,
-    config = function(_, o)
-      require("aerial").setup(o)
-    end,
-  },
-  {
-    'lukas-reineke/lsp-format.nvim',
-  },
-  {
-    "utilyre/barbecue.nvim",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("barbecue").setup()
-      require("barbecue.ui").update()
-    end,
-  },
-  {
-    'andweeb/presence.nvim',
-    opts = function()
-      return require("plugins.configs.presence").setup
-    end,
-    config = function(_, o)
-      require("presence").setup(o)
-    end,
-  }
-})
+for _, file in ipairs(config_files) do
+  if file:match("%.lua$") then
+    local config_name = file:match("(.+)%.lua$")
+    table.insert(lazy_configurations, require("plugins.configs." .. config_name))
+  end
+end
+
+table.insert(lazy_configurations, 1, require("plugins.core"))
+
+lazy.setup(lazy_configurations)
