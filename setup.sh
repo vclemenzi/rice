@@ -21,7 +21,7 @@ echo "Installation of dependencies in progress... (this can take a while)"
 sudo pacman -S picom feh i3 fish neofetch i3lock polybar rofi alacritty tmux neovim xclip mpv flameshot
 
 echo "Font installation in progress..."
-git clone https://aur.archlinux.org/nerd-fonts-jetbrains-mono-160.git ~/.cache/vclemenzi-rice-fonts-setup-temp
+git clone https://aur.archlinux.org/nerd-fonts-meta.git ~/.cache/vclemenzi-rice-fonts-setup-temp
 sudo pacman -S fontconfig xorg-mkfontscale xorg-mkfontdir fontforge
 cd ~/.cache/vclemenzi-rice-fonts-setup-temp && makepkg -si
 cd ..
