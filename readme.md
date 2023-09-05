@@ -1,4 +1,4 @@
-![sexy](./icon.png)
+![sexy](./.icons/icon.png)
 
 <div align="center">
 
@@ -15,4 +15,10 @@ curl https://raw.githubusercontent.com/vclemenzi/rice/main/setup.sh | bash
 ```
 
 Sudo is not required will be prompted with the various steps, setup asks for confirmation several times
+
+# Screenshots
 </div>
+
+![sexy](./icons/nvim1.png)
+![sexy](./icons/nvim2.png)
+![sexy](./icons/tmux.png)
