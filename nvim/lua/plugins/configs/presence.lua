@@ -1,5 +1,5 @@
 return {
-  'andweeb/presence.nvim',
+  'vclemenzi/presence.nvim',
   config = function()
     require("presence").setup({
       auto_update = true,

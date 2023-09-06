@@ -50,7 +50,7 @@ return {
     'lukas-reineke/indent-blankline.nvim'
   },
   {
-    'ThePrimeagen/vim-be-good'   -- Just for fun
+    'ThePrimeagen/vim-be-good' -- Just for fun
   },
   {
     'folke/todo-comments.nvim',
@@ -103,5 +103,5 @@ return {
       require("barbecue").setup()
       require("barbecue.ui").update()
     end,
-  }
+  },
 }
