@@ -47,9 +47,6 @@ return {
     end,
   },
   {
-    'lukas-reineke/indent-blankline.nvim'
-  },
-  {
     'ThePrimeagen/vim-be-good' -- Just for fun
   },
   {
