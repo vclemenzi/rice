@@ -15,6 +15,7 @@ return {
       reading_text = "Reading %s",
       workspace_text = "Working on %s",
       line_number_text = "Line %s out of %s",
+      presence_auto_update = 1,
     })
   end,
 }
