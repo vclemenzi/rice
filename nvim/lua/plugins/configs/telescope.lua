@@ -3,6 +3,7 @@ return {
   cmd = "Telescope",
   tag = '0.1.2',
   dependencies = { 'nvim-lua/plenary.nvim' },
+  lazy = true,
   keys = {
     {
       "<leader>?",

@@ -1,5 +1,6 @@
 return {
   'vclemenzi/presence.nvim',
+  lazy = true,
   config = function()
     require("presence").setup({
       auto_update = true,
