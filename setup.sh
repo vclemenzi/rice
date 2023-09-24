@@ -60,7 +60,7 @@ echo -ne '[\033[0;33m############\033[0m\033[0;90m---------------\033[0m] (40%)\
 sudo pacman -S --noconfirm picom feh i3 zsh neofetch i3lock polybar rofi alacritty tmux neovim xclip mpv flameshot &> /dev/null
 
 mkdir ~/.config/zsh/ &> /dev/null
-git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/ &> /dev/null
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/zsh-syntax-highlighting/ &> /dev/null
 
 # Step 4: Font installation
 echo -ne '[\033[0;33m##############\033[0m\033[0;90m-------------\033[0m] (50%)\r'
