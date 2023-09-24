@@ -57,7 +57,10 @@ rm -rf ~/.config/alacritty ~/.config/fish ~/.config/i3 ~/.config/neofetch ~/.con
 
 # Step 3: Installation of dependencies
 echo -ne '[\033[0;33m############\033[0m\033[0;90m---------------\033[0m] (40%)\r'
-sudo pacman -S --noconfirm picom feh i3 fish neofetch i3lock polybar rofi alacritty tmux neovim xclip mpv flameshot &> /dev/null
+sudo pacman -S --noconfirm picom feh i3 zsh neofetch i3lock polybar rofi alacritty tmux neovim xclip mpv flameshot &> /dev/null
+
+mkdir ~/.config/zsh/ &> /dev/null
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ~/.config/zsh/ &> /dev/null
 
 # Step 4: Font installation
 echo -ne '[\033[0;33m##############\033[0m\033[0;90m-------------\033[0m] (50%)\r'
@@ -73,7 +76,6 @@ echo -ne '[\033[0;33m######################\033[0m\033[0;90m-----\033[0m] (80%)\
 git clone https://github.com/vclemenzi/rice ~/.cache/vclemenzi-rice-temp/ &> /dev/null
 
 cp -r ~/.cache/vclemenzi-rice-temp/alacritty/ ~/.config/
-cp -r ~/.cache/vclemenzi-rice-temp/fish/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/i3/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/neofetch/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/nvim/ ~/.config/
@@ -82,6 +84,7 @@ cp -r ~/.cache/vclemenzi-rice-temp/polybar/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/rofi/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/tmux/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/mpv/ ~/.config/
+cp -r ~/.cache/vclemenzi-rice-temp/.zshrc ~/
 
 echo -ne '[\033[0;33m########################\033[0m\033[0;90m---\033[0m] (90%)\r'
 git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm &> /dev/null

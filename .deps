@@ -1,6 +1,0 @@
-# Arch packages
-## Required
-picom feh i3 fish neofetch i3lock polybar rofi alacritty tmux neovim xclip
-
-## Optional
-mpv flameshot
