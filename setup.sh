@@ -8,7 +8,7 @@ print_dots() {
 }
 
 echo " ______________________________________________"
-echo "/ Welcome to vclemenzi's rice setup!          \\"
+echo "/ Welcome to vclemenzi's rice setup (light)!  \\"
 echo -e "| Remember this action is \033[0;31mirreversible\033[0m!        |"
 echo "| Any problems can be reported at:             |"
 echo -e "\\  \033[0;36mhttps://gh.vclemenzi.dev/rice\033[0m              /"
@@ -53,7 +53,7 @@ sudo pacman -S --noconfirm git &> /dev/null
 
 # Step 2: Directory deletion
 echo -ne '[\033[0;33m########\033[0m\033[0;90m-------------------\033[0m] (20%)\r'
-rm -rf ~/.config/alacritty ~/.config/fish ~/.config/i3 ~/.config/neofetch ~/.config/nvim ~/.config/picom ~/.config/polybar ~/.config/rofi ~/.config/tmux ~/.config/mpv &> /dev/null
+rm -rf ~/.config/alacritty ~/.config/fish ~/.config/i3 ~/.config/nvim ~/.config/tmux ~/.config/mpv &> /dev/null
 
 # Step 3: Installation of dependencies
 echo -ne '[\033[0;33m############\033[0m\033[0;90m---------------\033[0m] (40%)\r'
@@ -73,15 +73,11 @@ cd ..
 
 # Step 5: Downloading the repo
 echo -ne '[\033[0;33m######################\033[0m\033[0;90m-----\033[0m] (80%)\r'
-git clone https://github.com/vclemenzi/rice ~/.cache/vclemenzi-rice-temp/ &> /dev/null
+git clone https://github.com/vclemenzi/rice --branch=light ~/.cache/vclemenzi-rice-temp/ &> /dev/null
 
 cp -r ~/.cache/vclemenzi-rice-temp/alacritty/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/i3/ ~/.config/
-cp -r ~/.cache/vclemenzi-rice-temp/neofetch/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/nvim/ ~/.config/
-cp -r ~/.cache/vclemenzi-rice-temp/picom/ ~/.config/
-cp -r ~/.cache/vclemenzi-rice-temp/polybar/ ~/.config/
-cp -r ~/.cache/vclemenzi-rice-temp/rofi/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/tmux/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/mpv/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/.zshrc ~/
