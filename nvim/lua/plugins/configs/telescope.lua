@@ -4,6 +4,20 @@ return {
   tag = '0.1.2',
   dependencies = { 'nvim-lua/plenary.nvim' },
   lazy = true,
+  config = function()
+    require('telescope').setup({
+      pickers = {
+        find_files = {
+          disable_devicons = true,
+          previewer = false,
+        },
+        file_browser = {
+          disable_devicons = true,
+          previewer = false,
+        }
+      }
+    })
+  end,
   keys = {
     {
       "<leader>?",

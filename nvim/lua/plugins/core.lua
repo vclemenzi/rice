@@ -39,14 +39,6 @@ return {
     end,
   },
   {
-    'catppuccin/nvim',
-    name = "catppuccin",
-    priority = 1000,
-    init = function()
-      vim.cmd.colorscheme "catppuccin"
-    end,
-  },
-  {
     'ThePrimeagen/vim-be-good' -- Just for fun
   },
   {
@@ -89,16 +81,5 @@ return {
   },
   {
     'lukas-reineke/lsp-format.nvim',
-  },
-  {
-    "utilyre/barbecue.nvim",
-    dependencies = {
-      "SmiteshP/nvim-navic",
-      "nvim-tree/nvim-web-devicons",
-    },
-    config = function()
-      require("barbecue").setup()
-      require("barbecue.ui").update()
-    end,
   },
 }
