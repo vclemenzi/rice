@@ -1,0 +1,73 @@
+================================================================================
+INTRODUCTION                                                             *editor*
+
+This is the usage manual for this config of neovim. Here you will find all the
+commands, shortcuts, features, plugins you can use.
+
+COMMANDS                                                        *editor.commands*
+
+This neovim offers many commands for various functions, here is the list:
+
+`<type>` required | `[type]` optional
+
+`:TabSet <number>` Decide on tab indentation for that editor session
+`:Settings` Open the settings panel (alias of `Telescope vim_options`)
+`:CratesUpdate` Update all project crates
+
+The commands `w`, `q`, `wq`, `wq` support the first letter capitalized
+
+MAPPINGS                                                            *editor.map*
+
+Here you can find all available mappings, the leader key is space
+
+`<leader>tn` Open a new tab (corresponding command: `:tabnew`)
+
+`j-morano/buffer_manager.nvim`:
+  `<leader>space` Find existing buffers
+
+`stevearc/oil.nvim`:
+  `<leader>e` Browse files
+
+`nvim-telescope/telescope.nvim`:
+  `<leader>?` Find files
+  `<leader>/` Fuzzily search in current buffer
+  `<leader>sg` Search git files 
+  `<leader>sf` Search files 
+  `<leader>so` Search old files
+  `<leader>sh` Search help
+  `<leader>sw` Search current word 
+  `<leader>sg` Search by grep 
+  `<leader>o` Open Vim options selection using Telescope
+
+CONFIG                                                           *editor.config*
+
+The configuration is divided into three main packages `core`, `commands`, `plugin`
+Each a usa its own function, listed below
+
+`core`:
+  The core package presents all the settings and mappings for neovim's internal functions, 
+  such as relative numbers for lines and mapping to create new tabs
+`commands`:
+  The commands package contains all the commands and custom aliases in the editor
+`plugins`:
+  The plugin package is used to define the configs and various functions of the editor's various plugins. 
+  Plugins can be defined inside the `core.lua` file for those that do not require configuration or extreme 
+  configurations (`require("plugin").setup({})` for example). On the other hand, if they require configurations, 
+  mappings or the like, just create a file (usually `[plugin name].lua`) in the `configs/` folder and inside 
+  it return an object that respects the structure of the lazy.nvim manger plugin
+
+  ```
+  return {
+    'user/plugin'
+    dependencies = { 'dep1', 'dep2' }
+    lazy = false,
+    keys = {
+      { "key", "action", desc = "description" },
+    },
+    config = function()
+      -- Code
+    end
+  }
+  ```
+
+vim:tw=78:ts=8:ft=help:norl:

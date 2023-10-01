@@ -1,0 +1,4 @@
+editor	editor.txt	/*editor*
+editor.commands	editor.txt	/*editor.commands*
+editor.map	editor.txt	/*editor.map*
+editor.config	editor.txt	/*editor.config*
