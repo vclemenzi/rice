@@ -53,7 +53,7 @@ sudo pacman -S --noconfirm git &> /dev/null
 
 # Step 2: Directory deletion
 echo -ne '[\033[0;33m########\033[0m\033[0;90m-------------------\033[0m] (20%)\r'
-rm -rf ~/.config/alacritty ~/.config/fish ~/.config/i3 ~/.config/nvim ~/.config/tmux ~/.config/mpv &> /dev/null
+rm -rf ~/.config/alacritty ~/.config/i3 ~/.config/nvim ~/.config/tmux ~/.config/mpv &> /dev/null
 
 # Step 3: Installation of dependencies
 echo -ne '[\033[0;33m############\033[0m\033[0;90m---------------\033[0m] (40%)\r'
@@ -77,7 +77,10 @@ git clone https://github.com/vclemenzi/rice --branch=light ~/.cache/vclemenzi-ri
 
 cp -r ~/.cache/vclemenzi-rice-temp/alacritty/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/i3/ ~/.config/
+cp -r ~/.cache/vclemenzi-rice-temp/polybar/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/nvim/ ~/.config/
+cp -r ~/.cache/vclemenzi-rice-temp/picom/ ~/.config/
+cp -r ~/.cache/vclemenzi-rice-temp/rofi/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/tmux/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/mpv/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/.zshrc ~/
