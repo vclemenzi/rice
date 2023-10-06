@@ -63,12 +63,6 @@ return {
     end,
   },
   {
-    'folke/which-key.nvim',
-    config = function()
-      require("which-key").setup({})
-    end,
-  },
-  {
     'saecki/crates.nvim',
     ft = { 'rust', 'toml' },
     lazy = true,

@@ -22,8 +22,8 @@ Here you can find all available mappings, the leader key is space
 
 `<leader>tn` Open a new tab (corresponding command: `:tabnew`)
 
-`j-morano/buffer_manager.nvim`:
-  `<leader>space` Find existing buffers
+`ThePrimeagen/harpoon`:
+  `<leader>space` Find harpoon files
 
 `stevearc/oil.nvim`:
   `<leader>e` Browse files
@@ -55,19 +55,5 @@ Each a usa its own function, listed below
   configurations (`require("plugin").setup({})` for example). On the other hand, if they require configurations, 
   mappings or the like, just create a file (usually `[plugin name].lua`) in the `configs/` folder and inside 
   it return an object that respects the structure of the lazy.nvim manger plugin
-
-  ```
-  return {
-    'user/plugin'
-    dependencies = { 'dep1', 'dep2' }
-    lazy = false,
-    keys = {
-      { "key", "action", desc = "description" },
-    },
-    config = function()
-      -- Code
-    end
-  }
-  ```
 
 vim:tw=78:ts=8:ft=help:norl:
