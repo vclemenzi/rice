@@ -16,7 +16,6 @@ return {
         "astro",
         "svelte",
         "eslint",
-        "emmet_ls",
         "clangd",
       }
     })
