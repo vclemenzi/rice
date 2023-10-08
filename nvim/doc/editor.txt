@@ -22,8 +22,8 @@ Here you can find all available mappings, the leader key is space
 
 `<leader>tn` Open a new tab (corresponding command: `:tabnew`)
 
-`ThePrimeagen/harpoon`:
-  `<leader>space` Find harpoon files
+`j-morano/buffer_manager.nvim`:
+  `<leader>space` View buffer navigator menu
 
 `stevearc/oil.nvim`:
   `<leader>e` Browse files
@@ -38,6 +38,8 @@ Here you can find all available mappings, the leader key is space
   `<leader>sw` Search current word 
   `<leader>sg` Search by grep 
   `<leader>o` Open Vim options selection using Telescope
+
+You can move between buffers with `Ctrl-H` and `Ctrl-L`
 
 CONFIG                                                           *editor.config*
 
