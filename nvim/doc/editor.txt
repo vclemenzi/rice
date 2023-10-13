@@ -20,8 +20,6 @@ MAPPINGS                                                            *editor.map*
 
 Here you can find all available mappings, the leader key is space
 
-`<leader>tn` Open a new tab (corresponding command: `:tabnew`)
-
 `j-morano/buffer_manager.nvim`:
   `<leader>space` View buffer navigator menu
 
@@ -57,5 +55,19 @@ Each a usa its own function, listed below
   configurations (`require("plugin").setup({})` for example). On the other hand, if they require configurations, 
   mappings or the like, just create a file (usually `[plugin name].lua`) in the `configs/` folder and inside 
   it return an object that respects the structure of the lazy.nvim manger plugin
+
+SPLITS                                                            *editor.splits*
+
+The configuration provides some shortcuts to create splits:
+  `Ctrl-S`: split current buffer
+  `Ctrl-W` split current buffer verticaly
+
+TABS                                                              *editor.tabs*
+
+The configuration provides some shortcuts to create and manage tabs:
+  `Ctrl-C`: create new tab 
+  `Ctrl-Q`: close current tab 
+  `Ctrl-A`: move to the prev tab 
+  `Ctrl-D`: move to the next tab 
 
 vim:tw=78:ts=8:ft=help:norl:
