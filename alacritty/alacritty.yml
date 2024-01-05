@@ -1,8 +1,0 @@
-window:
-  dynamic_padding: true
-font:
-  normal:
-    family: "JetBrainsMono Nerd Font"
-  size: 11.0
-env:
-  TERM: xterm-256color
