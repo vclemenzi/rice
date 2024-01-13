@@ -73,12 +73,11 @@ cd ..
 
 # Step 5: Downloading the repo
 echo -ne '[\033[0;33m######################\033[0m\033[0;90m-----\033[0m] (80%)\r'
-git clone https://github.com/vclemenzi/rice ~/.cache/vclemenzi-rice-temp/ &> /dev/null
+git clone https://github.com/vclemenzi/rice --branch=nord ~/.cache/vclemenzi-rice-temp/ &> /dev/null
 
 cp -r ~/.cache/vclemenzi-rice-temp/alacritty/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/i3/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/neofetch/ ~/.config/
-cp -r ~/.cache/vclemenzi-rice-temp/nvim/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/picom/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/polybar/ ~/.config/
 cp -r ~/.cache/vclemenzi-rice-temp/rofi/ ~/.config/

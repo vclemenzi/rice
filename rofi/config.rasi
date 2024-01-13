@@ -1,6 +1,5 @@
 configuration {
-  display-drun: "Applications:";
-  display-window: "Windows:";
+  display-drun: " ";
   drun-display-format: "{icon} {name}";
   font: "JetBrainsMono Nerd Font Medium 10";
   modi: "window,run,drun";
@@ -11,12 +10,12 @@ configuration {
 @theme "/dev/null"
 
 * {
-  bg: #1e1e2e66;
-  bg-alt: #585b7066;
-  bg-selected: #31324466;
+  bg: #1f242b;
+  bg-alt: #3b4252;
+  bg-selected: #3b4252;
 
-  fg: #cdd6f4;
-  fg-alt: #7f849c;
+  fg: #d8dee9;
+  fg-alt: #e5e9f0;
 
   
   border: 0;
@@ -33,7 +32,9 @@ window {
 
 element {
   padding: 8 12;
-  background-color: @bg;
+  margin: 0 0 5 0;
+  border-radius: 10px;
+  background-color: #2e3440;
   text-color: @fg-alt;
 }
 
@@ -63,12 +64,16 @@ entry {
 inputbar {
   children: [prompt, entry];
   background-color: @bg;
+  border-radius: 10px;
+  margin: 12;
 }
 
 listview {
-  background-color: @bg;
+  background-color: transparent;
   columns: 1;
   lines: 10;
+  margin: 12;
+  border-radius: 10px;
 }
 
 mainbox {
