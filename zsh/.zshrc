@@ -13,6 +13,7 @@ plug "zap-zsh/fzf"
 plug "$HOME/.config/zsh/modules/prompt.sh"
 plug "$HOME/.config/zsh/modules/aliases.sh"
 plug "$HOME/.config/zsh/modules/vars.sh"
+plug "$HOME/.config/zsh/modules/commands.sh"
 
 export VI_MODE_ESC_INSERT="jk" && plug "zap-zsh/vim"
 
