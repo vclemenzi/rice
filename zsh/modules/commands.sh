@@ -3,7 +3,7 @@
 # Each alias is a function that checks if a command is available and uses it if it is, 
 # otherwise it falls back to the default command.
 
-alias internal_install_deps='pacman -Sy bat eza'
+alias internal_install_deps='sudo pacman -Sy bat eza'
 
 function cat() {
   if command -v which bat &> /dev/null; then

@@ -22,3 +22,6 @@ bindkey '^[[B' history-substring-search-down
 
 autoload -Uz compinit
 compinit
+
+# Zoxide
+eval "$(zoxide init zsh)"
