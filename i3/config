@@ -22,6 +22,7 @@ default_border pixel 0
 default_floating_border pixel 0
 
 exec_always --no-startup-id feh --bg-scale .config/i3/bg.png
+exec_always --no-startup-id picom -b
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
